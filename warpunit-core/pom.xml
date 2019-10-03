@@ -75,5 +75,12 @@
       <version>2.3.3.Final-redhat-1</version>
     </dependency>
 
+    <!-- allow using Asserts on the server side-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
   </dependencies>
 </project>
