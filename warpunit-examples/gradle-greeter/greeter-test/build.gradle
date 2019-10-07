@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+dependencies {
+	// Java EE APIs
+	testCompile 'javax:javaee-api:7.0'
+	// Test framework
+	testCompile 'junit:junit:4.12'
+	// we need to see our business interfaces in our tests -->
+	testCompile project(":greeter-lib");
+	// warpunit dependency
+	testCompile 'org.dcm4che:warpunit-core:alpha-+'	
+}

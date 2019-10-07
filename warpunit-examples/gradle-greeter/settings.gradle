@@ -1,0 +1,5 @@
+rootProject.name = 'gradle-greeter'
+
+include 'greeter-lib'
+include 'greeter-ear'
+include 'greeter-test'

@@ -1,0 +1,23 @@
+apply plugin: 'ear'
+apply plugin: 'eclipse-wtp'
+
+dependencies {
+	deploy 'org.dcm4che:warpunit-insider-template-war:alpha-+'
+
+	earlib project(':greeter-lib')
+}
+
+ear {
+	archiveName 'greeter.ear'
+
+    deploymentDescriptor {
+        webModule("warpunit-insider-template-war-alpha-SNAPSHOT.war", "warpunit-insider")
+    }
+}
+
+task deployEar(type: Copy, dependsOn: 'ear') {
+	dependsOn 'build'
+    description 'Copy the artifact to $DEPLOY_TO'
+	from ear.archivePath
+	into "${System.env.DEPLOY_TO}"
+}
